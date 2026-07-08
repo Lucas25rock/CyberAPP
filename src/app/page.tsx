@@ -12,7 +12,7 @@ const albums = [
   {
     title: "Welcome To My Universe",
     year: "2020",
-    coverUrl: "/placeholder.svg",
+    coverUrl: "/album-welcome-to-my-universe.jpg",
     spotifyUrl: "https://open.spotify.com/album/4L4cj8hxh7gBzfmtTeInfH",
     tracks: [
       { title: "The End Begins", duration: "1:33" },
