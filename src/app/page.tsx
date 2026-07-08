@@ -1,36 +1,71 @@
 import DiscographyGrid from "@/components/discography-grid"
 import CommentsSection from "@/components/comments-section"
-import { Globe, Music, Headphones } from "lucide-react"
+import {
+  Music,
+  Globe,
+  Headphones,
+  Film,
+  BookOpen,
+} from "lucide-react"
 
 const albums = [
   {
-    title: "Álbum Uno",
-    year: "2025",
+    title: "Welcome To My Universe",
+    year: "2020",
     coverUrl: "/placeholder.svg",
-    spotifyUrl: "https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy",
+    spotifyUrl: "https://open.spotify.com/album/4L4cj8hxh7gBzfmtTeInfH",
     tracks: [
-      { title: "Track 1", duration: "3:45" },
-      { title: "Track 2", duration: "4:20" },
-    ],
-  },
-  {
-    title: "Álbum Dos",
-    year: "2026",
-    coverUrl: "/placeholder.svg",
-    soundcloudUrl: "https://soundcloud.com/forss/flickermood",
-    tracks: [
-      { title: "Track 1", duration: "3:30" },
-      { title: "Track 2", duration: "4:15" },
+      { title: "The End Begins", duration: "1:33" },
+      { title: "Here We Come", duration: "4:10" },
+      { title: "Hope 0%", duration: "2:59" },
+      { title: "Rise Up", duration: "3:45" },
+      { title: "Fight or Flight", duration: "4:02" },
+      { title: "Neon Dreams", duration: "3:30" },
+      { title: "Broken Circuit", duration: "3:55" },
+      { title: "System Error", duration: "2:48" },
+      { title: "Los Mismos Errores", duration: "4:15" },
+      { title: "Unknown Systems Error", duration: "3:22" },
+      { title: "Final Stand", duration: "4:30" },
+      { title: "Project R.O.M", duration: "3:11" },
     ],
   },
 ]
 
 const socialLinks = [
-  { label: "Instagram", href: "#" },
-  { label: "YouTube", href: "#" },
-  { label: "GitHub", href: "#" },
-  { label: "SoundCloud", href: "#" },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/cyber.kyd",
+    icon: "camera",
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@cyberkyd7",
+    icon: "video",
+  },
+  {
+    label: "Spotify",
+    href: "https://open.spotify.com/artist/3Zx09jrSmnaJCy4E1hZWhz",
+    icon: "music",
+  },
+  {
+    label: "SoundCloud",
+    href: "https://soundcloud.com/cyberkyd",
+    icon: "headphones",
+  },
+  {
+    label: "Facebook",
+    href: "https://facebook.com/CyberKYD7",
+    icon: "globe",
+  },
 ]
+
+const socialIcons: Record<string, React.ReactNode> = {
+  camera: <Film size={16} />,
+  video: <Film size={16} />,
+  music: <Music size={16} />,
+  headphones: <Headphones size={16} />,
+  globe: <Globe size={16} />,
+}
 
 export default function Home() {
   return (
@@ -41,7 +76,7 @@ export default function Home() {
           Cyber<span className="text-cyber-green">KYD</span>
         </h1>
         <p className="mt-4 text-lg md:text-xl text-cyber-white/60 max-w-md">
-          Explorá la música. Sentí el sonido.
+          Nu Metal &middot; Cyber Metal &middot; Productor
         </p>
       </section>
 
@@ -51,19 +86,20 @@ export default function Home() {
             <span className="text-cyber-green">Artista</span>
           </h2>
           <p className="text-cyber-white/60 leading-relaxed max-w-xl mx-auto">
-            CyberKYD es un proyecto musical que fusiona sonidos electrónicos con
-            influencias del cyberpunk y el synthwave. Cada track es un viaje
-            sonoro a un futuro distópico pero lleno de esperanza.
+            Hola mundo, soy CyberKYD, bienvenidos a mi resistencia. Acá
+            encontrarás videojuegos, música y más. Nu Metal, Cyber Metal y
+            producción propia. Nuevos proyectos en camino.
           </p>
           <div className="flex justify-center gap-4 mt-8 flex-wrap">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="px-4 py-2 text-sm text-cyber-white/60 border border-zinc-800 rounded-lg hover:border-cyber-green hover:text-cyber-green transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm text-cyber-white/60 border border-zinc-800 rounded-lg hover:border-cyber-green hover:text-cyber-green transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {socialIcons[link.icon]}
                 {link.label}
               </a>
             ))}
